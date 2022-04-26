@@ -149,13 +149,17 @@ Inherits="shoppingMall.WebForm1" %>
 					</div>
 				</form>
 				<footer class="footer">
-					New customer?
-					<asp:HyperLink
-						ID="register"
-						runat="server"
-						NavigateUrl="~/register.aspx"
-						>Register<span class="bottom-border-animation"></span
-					></asp:HyperLink>
+					<p>
+						New customer?
+						<asp:HyperLink
+							ID="register"
+							runat="server"
+							NavigateUrl="~/register.aspx"
+							>Register<span class="bottom-border-animation"></span
+						></asp:HyperLink>
+					</p>
+					<asp:Label ID="LLoginMessage" runat="server" Text=""></asp:Label>
+					<asp:Label ID="LLoginErrorMessage" runat="server" Text=""></asp:Label>
 				</footer>
 			</section>
 		</main>

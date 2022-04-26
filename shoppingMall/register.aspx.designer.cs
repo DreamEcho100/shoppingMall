@@ -78,6 +78,33 @@ namespace shoppingMall
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqLastName;
 
         /// <summary>
+        /// txUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txUserName;
+
+        /// <summary>
+        /// lUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lUserName;
+
+        /// <summary>
+        /// ReqUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqUserName;
+
+        /// <summary>
         /// txEmail control.
         /// </summary>
         /// <remarks>
@@ -186,6 +213,33 @@ namespace shoppingMall
         protected global::System.Web.UI.WebControls.TextBox txDateOfBirth;
 
         /// <summary>
+        /// ReqDateOfBirth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqDateOfBirth;
+
+        /// <summary>
+        /// FUProfilePicture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FUProfilePicture;
+
+        /// <summary>
+        /// ReqProfilePicture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqProfilePicture;
+
+        /// <summary>
         /// RBLSex control.
         /// </summary>
         /// <remarks>
@@ -213,12 +267,21 @@ namespace shoppingMall
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
 
         /// <summary>
-        /// TL control.
+        /// LRegisterMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TL;
+        protected global::System.Web.UI.WebControls.Label LRegisterMessage;
+
+        /// <summary>
+        /// LRegisterErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LRegisterErrorMessage;
     }
 }

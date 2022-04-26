@@ -130,6 +130,29 @@ Inherits="shoppingMall.Register" %>
 
 					<div class="form-controller animation-1">
 						<asp:TextBox
+							ID="txUserName"
+							runat="server"
+							CssClass="checkForEmptyValue"
+						></asp:TextBox>
+						<asp:Label
+							ID="lUserName"
+							data-for_id="txUserName"
+							runat="server"
+							Text="User Name"
+							CssClass="form-label"
+						></asp:Label>
+					</div>
+					<div class="form-controller error pseudoHide">
+						<asp:RequiredFieldValidator
+							ID="ReqUserName"
+							runat="server"
+							ErrorMessage="User Name field is required"
+							ControlToValidate="txUserName"
+						></asp:RequiredFieldValidator>
+					</div>
+
+					<div class="form-controller animation-1">
+						<asp:TextBox
 							ID="txEmail"
 							runat="server"
 							TextMode="Email"
@@ -227,9 +250,30 @@ Inherits="shoppingMall.Register" %>
 							required="required"
 						/>
 					</div>
+					<div class="form-controller error pseudoHide">
+						<asp:RequiredFieldValidator
+							ID="ReqDateOfBirth"
+							runat="server"
+							ErrorMessage="Date Of Birth field is required"
+							ControlToValidate="txDateOfBirth"
+						></asp:RequiredFieldValidator>
+					</div>
+
+					<div class="form-controller d2">
+						<label for="FUProfilePicture">Profile Picture</label>
+						<asp:FileUpload ID="FUProfilePicture" runat="server" />
+					</div>
+					<div class="form-controller error pseudoHide">
+						<asp:RequiredFieldValidator
+							ID="ReqProfilePicture"
+							runat="server"
+							ErrorMessage="Date Of Birth field is required"
+							ControlToValidate="FUProfilePicture"
+						></asp:RequiredFieldValidator>
+					</div>
 
 					<fieldset>
-						<legend>Choose sex</legend>
+						<legend>Sex</legend>
 						<div class="form-controllers">
 							<asp:RadioButtonList ID="RBLSex" runat="server">
 								<asp:ListItem Selected="True" Value="m">Male</asp:ListItem>
@@ -253,19 +297,22 @@ Inherits="shoppingMall.Register" %>
 					</div>
 				</form>
 				<footer class="footer">
-					Have an account?
-					<asp:HyperLink
-						ID="HyperLink1"
-						runat="server"
-						NavigateUrl="~/login.aspx"
-						>Login<span class="bottom-border-animation"></span
-					></asp:HyperLink>
-				</footer>
-						<asp:Label
-							ID="TL"
+					<p>
+						Have an account?
+						<asp:HyperLink
+							ID="HyperLink1"
 							runat="server"
-							Text=""
-						></asp:Label>
+							NavigateUrl="~/login.aspx"
+							>Login<span class="bottom-border-animation"></span
+						></asp:HyperLink>
+					</p>
+					<asp:Label ID="LRegisterMessage" runat="server" Text=""></asp:Label>
+					<asp:Label
+						ID="LRegisterErrorMessage"
+						runat="server"
+						Text=""
+					></asp:Label>
+				</footer>
 			</section>
 		</main>
 

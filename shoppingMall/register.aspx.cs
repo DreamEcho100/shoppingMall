@@ -21,10 +21,19 @@ namespace shoppingMall
             conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|ShopingMallDatabase.mdf;Integrated Security=True";
             // C:\\Users\\elmohandes\\source\\repos\\shoppingMall\\shoppingMall\\App_Data\\
 
+            String FUProfilePictureSrc = null;
+
+            if (FUProfilePicture.HasFile) {
+                FUProfilePictureSrc = txUserName.Text + ".jpg";
+                FUProfilePicture.SaveAs(Server.MapPath("usersProfilePicture") + "\\" + FUProfilePictureSrc);
+            }
+
             String sqlString = string.Format(
-                "INSERT INTO [member] ([firstName], [lastName], [email], [password], [sex], [dateOfBirth]) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
+                "INSERT INTO [member] ([firstName], [lastName], [userName], [profilePicture], [email], [password], [sex], [dateOfBirth]) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')",
                 txFirstName.Text,
                 txLastName.Text,
+                txUserName.Text,
+                FUProfilePictureSrc,
                 txEmail.Text,
                 txPassword.Text,
                 RBLSex.SelectedValue,
@@ -36,11 +45,12 @@ namespace shoppingMall
                 conn.Open();
                 command.ExecuteNonQuery();
                 conn.Close();
+
+                LRegisterMessage.Text = "Registered Successfully!";
             } catch (Exception err) {
                 //if (err.Number == 2677) { }
 
-                Console.WriteLine(err.Message);
-                TL.Text = err.Message;
+                LRegisterErrorMessage.Text = err.Message;
             }
             
         }
