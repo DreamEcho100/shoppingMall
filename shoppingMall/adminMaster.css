@@ -1,0 +1,19 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.main-header,
+.main-content,
+.main-footer {
+	width: 100%;
+}
+
+main {
+	background-color: var(--main-bg-color-1);
+	margin: 0 auto;
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
+	min-height: fill-available;
+}

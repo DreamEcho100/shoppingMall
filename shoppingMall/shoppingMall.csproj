@@ -82,6 +82,13 @@
     <Content Include="login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminMaster.Master.cs">
+      <DependentUpon>adminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminMaster.Master.designer.cs">
+      <DependentUpon>adminMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -113,6 +120,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -28,8 +28,9 @@ main {
 	/* width: 95%; */
 	width: fit-content;
 	margin: 0 auto;
-	/* height: fit-content; */
+	min-height: 100vh;
 	min-height: -webkit-fill-available;
+	min-height: fill-available;
 }
 
 .form-section > header {
