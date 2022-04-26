@@ -1,0 +1,177 @@
+﻿.form {
+	--box-shadow-spread: 1rem;
+	border: 0.25rem solid var(--main-bg-color-4);
+	border-radius: 0.5rem;
+	padding: 0.5em;
+	margin-bottom: 1em;
+	box-shadow: 0rem 0rem var(--box-shadow-spread) var(--main-bg-color-5);
+	filter: invert(0.2);
+	transition: all ease-in var(--main-transition-duration);
+	max-width: 100%;
+}
+
+.form,
+.form-controller,
+.form-controller .form-label,
+.form-controller input,
+.form-controller label {
+	max-width: 100%;
+}
+
+.form:hover,
+.form:focus {
+	--box-shadow-spread: 0.5rem;
+	/* filter: brightness(1); */
+	filter: invert(0);
+}
+
+.form-controller {
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0.25em;
+}
+
+.form fieldset {
+	margin: 0.75em;
+}
+.form fieldset legend {
+	text-align: center;
+}
+
+.form-controllers {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-controllers {
+	align-items: center;
+	justify-content: center;
+}
+.form-controllers .form-controller {
+	align-items: center;
+	justify-content: center;
+}
+.form-controllers .form-controller > * {
+	margin: 0.25em;
+}
+
+.form-controller.d2 label,
+.form-controller.d2 .form-label {
+	align-self: center;
+}
+
+.form-controller label,
+.form-controller .form-label {
+	cursor: pointer;
+}
+.form-controller.animation-1 label,
+.form-controller.animation-1 .form-label {
+	width: auto;
+}
+
+.form-controller.error {
+	/* background-color: palevioletred; */
+	color: darkred;
+	padding: 0 0.25em;
+}
+
+.form-controller.animation-1 {
+	position: relative;
+	top: -1px;
+	left: 2px;
+}
+.form-controller.animation-1 .form-label,
+.form-controller.animation-1 label {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(calc(-50% - 0%)) scale(0.9);
+	transition: all ease-in var(--main-transition-duration);
+}
+
+.form-controller.animation-1 input:not([type='submit']) + .form-label,
+.form-controller.animation-1 input:not([type='submit']) + label {
+	opacity: 0;
+}
+.form-controller.animation-1 input:not([type='submit']).isEmpty + .form-label,
+.form-controller.animation-1 input:not([type='submit']).isEmpty + label {
+	opacity: 1;
+}
+/* 
+.form-controller.animation-1:hover .form-label,
+.form-controller.animation-1:hover label, */
+.form-controller.animation-1 input:not([type='submit'], .isEmpty) + .form-label,
+.form-controller.animation-1 input:not([type='submit'], .isEmpty) + label,
+.form-controller.animation-1 input:not([type='submit']):focus + .form-label,
+.form-controller.animation-1 input:not([type='submit']):focus + label {
+	top: 0%;
+	left: -0.1em;
+	transform: translate(-25%, -50%) scale(0.5);
+	background-color: var(--main-bg-color-0);
+	padding: 0.25em;
+	font-weight: bold;
+	opacity: 1;
+}
+
+input:not([type='submit']) {
+	border-bottom: 0.25rem solid var(--main-bg-color-4);
+	padding: 0.25em;
+}
+
+.form-controller.animation-1 input:not([type='submit']) {
+	padding: 0.75em 0.25em 0.25em 0.25em;
+}
+
+button,
+input[type='submit'] {
+	background-color: var(--main-bg-color-4);
+	color: var(--main-font-color-4);
+	padding: 0.5em;
+	filter: brightness(0.9);
+	transition: all ease-in var(--main-transition-duration);
+}
+button:hover,
+input[type='submit']:hover {
+	filter: brightness(1.1);
+}
+button:focus,
+input[type='submit']:focus {
+	filter: brightness(1.1)
+		drop-shadow(0.2rem 0.4rem 0.6rem var(--main-bg-color-3));
+	border: 0.25rem solid var(--main-bg-color-4);
+}
+
+a {
+	position: relative;
+	transition: filter ease-in-out var(--main-transition-duration)
+		calc(var(--main-transition-duration) * 0.5);
+}
+
+a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: translateY(100%);
+	width: 100%;
+	padding: 0.0625em 0;
+	background-color: var(--main-bg-color-4);
+	transition: all ease-in var(--main-transition-duration);
+}
+
+a:hover::after,
+a:focus::after {
+	width: 0;
+}
+
+a:hover,
+a:focus {
+	filter: drop-shadow(0rem 0rem 0.3rem var(--main-bg-color-3));
+}
+
+.pseudoHide {
+	height: 0;
+	overflow: hidden;
+}
