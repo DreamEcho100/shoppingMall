@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adminHome.aspx" />
     <Content Include="admin\index.aspx" />
     <Content Include="App_Data\ShopingMallDatabase.mdf" />
     <Content Include="App_Data\ShopingMallDatabase_log.ldf">
@@ -78,19 +77,11 @@
     <Content Include="register.aspx" />
     <Content Include="RegisterForm.html" />
     <Content Include="loginStyles.css" />
-    <Content Include="userHome.aspx" />
     <Content Include="users\index.aspx" />
     <Content Include="Web.config" />
     <Content Include="login.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adminHome.aspx.cs">
-      <DependentUpon>adminHome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="adminHome.aspx.designer.cs">
-      <DependentUpon>adminHome.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -112,13 +103,6 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="userHome.aspx.cs">
-      <DependentUpon>userHome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="userHome.aspx.designer.cs">
-      <DependentUpon>userHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="users\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
