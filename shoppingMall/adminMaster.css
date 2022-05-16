@@ -4,16 +4,69 @@ body {
 	justify-content: flex-start;
 }
 
-.main-header,
-.main-content,
-.main-footer {
+#main-header,
+#main-content,
+#main-footer {
 	width: 100%;
+	background-color: var(--main-bg-color-1);
+	padding: 0.5em;
 }
 
-main {
-	background-color: var(--main-bg-color-1);
+#main-header {
+	margin-bottom: 1em;
+}
+#main-header nav ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+#main-header nav ul li {
+	padding: 0.25em 0.5em;
+}
+
+#main-header .userWelcomeMsg {
+    display: flex;
+    align-items: center;
+	padding: 0.5em;
+}
+#main-header .userWelcomeMsg .img-holder {
+	height: 25vw;
+    max-height: 15rem;
+    min-height: 12.5rem;
+    width: 25vw;
+    max-width: 15rem;
+    min-width: 12.5rem;
+    border-radius: 50%;
+	overflow: hidden;
+}
+#main-header .userWelcomeMsg .img-holder img {
+	height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease-in var(--main-transition-duration);
+}
+#main-header .userWelcomeMsg .img-holder img:hover {
+	transform: scale(1.1);
+}
+#main-header .userWelcomeMsg .text-holder {
+	height: 100%;
+}
+
+#main-content {
 	margin: 0 auto;
 	min-height: 100vh;
 	min-height: -webkit-fill-available;
 	min-height: fill-available;
+}
+
+#main-footer{
+	margin-top: 1em;
+}
+
+@media all and (max-width: 500px) {
+	#main-header nav ul {
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
 }

@@ -8,24 +8,61 @@ CodeBehind="adminMaster.master.cs" Inherits="shoppingMall.adminMaster" %>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initPageial-scale=1.0" />
-		<!-- <title></title> -->
-		<link href="globals.css" type="text/css" rel="stylesheet" />
+		<link href="~/globals.css" type="text/css" rel="stylesheet" />
 		<link rel="stylesheet" href="~/adminMaster.css" type="text/css" />
 		<asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
 	</head>
 	<body>
 		<header id="main-header">
-			<div class="img-holder">
-				<asp:Image ID="Image1" runat="server" />
+			<div class="userWelcomeMsg">
+				<div class="img-holder">
+					<asp:Image ID="UserProfilePicture" runat="server" />
+				</div>
+				<div class="text-holder">
+					<h1>Welcome <asp:Label ID="WelcomeUserName" runat="server" ></asp:Label></h1>
+				</div>
 			</div>
-			<div class="text-holder">
-				<h1>Welcome</h1>
-			</div>
+			<nav>
+				<ul>
+					<li>
+						<asp:HyperLink
+							ID="hlProductsList"
+							runat="server"
+							CssClass="animation-1"
+							NavigateUrl="~/admin/productsList"
+						>
+							Products List
+						</asp:HyperLink>
+					</li>
+					<li>
+						<asp:HyperLink
+							ID="hlMembersList"
+							runat="server"
+							CssClass="animation-1"
+							NavigateUrl="~/admin/membersList"
+						>
+							Members List
+						</asp:HyperLink>
+					</li>
+					<li>
+						<asp:HyperLink
+							ID="hlOrdersList"
+							runat="server"
+							CssClass="animation-1"
+							NavigateUrl="~/admin/ordersList"
+						>
+							Orders List
+						</asp:HyperLink>
+					</li>
+				</ul>
+			</nav>
 		</header>
 		<main id="main-content">
 			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 			</asp:ContentPlaceHolder>
 		</main>
-		<footer id="main-footer"></footer>
+		<footer id="main-footer">
+			&copy;2022
+		</footer>
 	</body>
 </html>

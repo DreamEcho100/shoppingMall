@@ -143,34 +143,6 @@ input[type='submit']:focus {
 	border: 0.25rem solid var(--main-bg-color-4);
 }
 
-a {
-	position: relative;
-	transition: filter ease-in-out var(--main-transition-duration)
-		calc(var(--main-transition-duration) * 0.5);
-}
-
-a::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	transform: translateY(100%);
-	width: 100%;
-	padding: 0.0625em 0;
-	background-color: var(--main-bg-color-4);
-	transition: all ease-in var(--main-transition-duration);
-}
-
-a:hover::after,
-a:focus::after {
-	width: 0;
-}
-
-a:hover,
-a:focus {
-	filter: drop-shadow(0rem 0rem 0.3rem var(--main-bg-color-3));
-}
-
 .pseudoHide {
 	height: 0;
 	overflow: hidden;

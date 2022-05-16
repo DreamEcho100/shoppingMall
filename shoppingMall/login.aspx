@@ -155,8 +155,9 @@ Inherits="shoppingMall.WebForm1" %>
 							ID="register"
 							runat="server"
 							NavigateUrl="~/register.aspx"
-							>Register<span class="bottom-border-animation"></span
-						></asp:HyperLink>
+							CssClass="animation-1"
+							>Register
+						</asp:HyperLink>
 					</p>
 					<asp:Label ID="LLoginMessage" runat="server" Text=""></asp:Label>
 					<asp:Label ID="LLoginErrorMessage" runat="server" Text=""></asp:Label>

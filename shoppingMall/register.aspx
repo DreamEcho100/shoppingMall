@@ -303,8 +303,9 @@ Inherits="shoppingMall.Register" %>
 							ID="HyperLink1"
 							runat="server"
 							NavigateUrl="~/login.aspx"
-							>Login<span class="bottom-border-animation"></span
-						></asp:HyperLink>
+							CssClass="animation-1"
+							>Login
+						</asp:HyperLink>
 					</p>
 					<asp:Label ID="LRegisterMessage" runat="server" Text=""></asp:Label>
 					<asp:Label
