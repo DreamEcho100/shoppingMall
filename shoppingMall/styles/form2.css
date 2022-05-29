@@ -1,0 +1,32 @@
+﻿.form2 {
+    border: 0.1rem solid black;
+    padding: 0.5em;
+    margin: 0.5em 0;
+}
+
+.form2 .form-conatiner {
+    display: flex;
+    margin-bottom: 0.5em;
+    gap: 0.5em;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.form2 .form-conatiner .form-input-controller {
+    transition: all 0.3s ease-in-out;
+}
+
+.form2 .form-conatiner:hover .form-input-controller:not(:hover,:focus,.noNothoverAnimation) {
+    filter: opacity(0.5);
+}
+
+.form2 .form-conatiner .form-input-controller input {
+    border-bottom: 0.1rem solid black;
+    padding: 0.25em 0.5em;
+}
+
+.form2 .form-conatiner .form-submit-controller input {
+    padding: 0.5em;
+    background-color: #333;
+    color: #eee;
+}

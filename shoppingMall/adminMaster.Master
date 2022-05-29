@@ -8,8 +8,8 @@ CodeBehind="adminMaster.master.cs" Inherits="shoppingMall.adminMaster" %>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initPageial-scale=1.0" />
-		<link href="~/globals.css" type="text/css" rel="stylesheet" />
-		<link rel="stylesheet" href="~/adminMaster.css" type="text/css" />
+		<link href="~/styles/globals.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="~/styles/adminMaster.css" type="text/css" />
 		<asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
 	</head>
 	<body>
@@ -26,32 +26,42 @@ CodeBehind="adminMaster.master.cs" Inherits="shoppingMall.adminMaster" %>
 				<ul>
 					<li>
 						<asp:HyperLink
-							ID="hlProductsList"
+							ID="hlProducts"
 							runat="server"
 							CssClass="animation-1"
-							NavigateUrl="~/admin/productsList.aspx"
+							NavigateUrl="~/admin/products.aspx"
 						>
-							Products List
+							Products
 						</asp:HyperLink>
 					</li>
 					<li>
 						<asp:HyperLink
-							ID="hlMembersList"
+							ID="hlMembers"
 							runat="server"
 							CssClass="animation-1"
-							NavigateUrl="~/admin/membersList.aspx"
+							NavigateUrl="~/admin/members.aspx"
 						>
-							Members List
+							Members
 						</asp:HyperLink>
 					</li>
 					<li>
 						<asp:HyperLink
-							ID="hlOrdersList"
+							ID="hlOrders"
 							runat="server"
 							CssClass="animation-1"
-							NavigateUrl="~/admin/ordersList.aspx"
+							NavigateUrl="~/admin/orders.aspx"
 						>
-							Orders List
+							Orders
+						</asp:HyperLink>
+					</li>
+					<li>
+						<asp:HyperLink
+							ID="hlImages"
+							runat="server"
+							CssClass="animation-1"
+							NavigateUrl="~/admin/images.aspx"
+						>
+							Images
 						</asp:HyperLink>
 					</li>
 				</ul>

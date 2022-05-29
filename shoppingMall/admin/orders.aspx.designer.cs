@@ -7,74 +7,56 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace shoppingMall
+namespace shoppingMall.admin
 {
 
 
-    public partial class adminMaster
+    public partial class orders
     {
 
         /// <summary>
-        /// head control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// UserProfilePicture control.
+        /// LCNPUodateDeliveryDateSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image UserProfilePicture;
+        protected global::System.Web.UI.WebControls.Label LCNPUodateDeliveryDateSuccess;
 
         /// <summary>
-        /// WelcomeUserName control.
+        /// LCNPUodateDeliveryDateError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label WelcomeUserName;
+        protected global::System.Web.UI.WebControls.Label LCNPUodateDeliveryDateError;
 
         /// <summary>
-        /// hlProducts control.
+        /// GVOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlProducts;
+        protected global::System.Web.UI.WebControls.GridView GVOrders;
 
         /// <summary>
-        /// hlMembers control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlMembers;
-
-        /// <summary>
-        /// hlOrdersList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlOrdersList;
-
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

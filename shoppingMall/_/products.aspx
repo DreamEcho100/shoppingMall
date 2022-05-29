@@ -1,78 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/adminMaster.Master" AutoEventWireup="true" CodeBehind="productsList.aspx.cs" Inherits="shoppingMall.admin.productsList" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/adminMaster.Master" AutoEventWireup="true" CodeBehind="products.aspx.cs" Inherits="shoppingMall.admin.productsList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
-        .tableContainer {
-            max-width: 100%;
-            overflow-x: auto;
-        }
-        table {
-          font-family: Arial, Helvetica, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
-        }
-				th, td {
-					padding: 15px;
-					text-align: left;
-				}
-				th, td {
-					border-bottom: 1px solid #ddd;
-				}
-				td, th {
-					border: 1px solid #ddd;
-					padding: 8px;
-				}
-				tr:nth-child(even){background-color: #f2f2f2;}
-				tr:hover {background-color: #ddd;}
-				th {
-				background-color: #333;
-						color: #eee;
-				}
-				td input[type="text"] {
-						padding: 0.5em;
-				}
-				/*td a:contains("Cancel"){
-						background-color: palevioletred;
-						color: darkred;
-						padding: 0.25em;
-				}*/
-				.CNP {
-						border: 0.1rem solid black;
-						padding: 0.5em;
-						margin: 0.5em 0;
-				}
-				.CNPFormConatiner {
-						display: flex;
-						margin-bottom: 0.5em;
-						gap: 0.5em;
-						width: 100%;
-						flex-wrap: wrap;
-				}
-				.CNPFormConatiner .form-input-controller {
-						transition: all 0.3s ease-in-out;
-				}
-				.CNPFormConatiner:hover .form-input-controller:not(:hover,:focus,.noNothoverAnimation) {
-						filter: opacity(0.5);
-				}
-				.CNPFormConatiner .form-input-controller input {
-						border-bottom: 0.1rem solid black;
-						padding: 0.25em 0.5em;
-				}
-				.CNPFormConatiner .form-submit-controller input {
-					padding: 0.5em;
-						background-color: #333;
-						color: #eee;
-				}
-    </style>
+		<link rel="stylesheet" href="~/../../styles/table.css" type="text/css" />
+		<link rel="stylesheet" href="~/../../styles/form2.css" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
         
     <form id="form2" runat="server">
-    <div class="CNP">
+    <div class="form2">
 			<header>
 				<h2>Add a New Product?</h2>
 			</header>
-        <div class="CNPFormConatiner">        
+        <div class="form-conatiner">        
             <div class='form-input-controller'>
                 <label for='tBName'>Name</label>
                 <asp:TextBox

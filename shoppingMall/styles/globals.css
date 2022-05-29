@@ -254,7 +254,8 @@ a {
 a,
 button,
 label,
-input[type='submit'] {
+input[type='submit'],
+input[type="button"] {
 	cursor: pointer;
 }
 
