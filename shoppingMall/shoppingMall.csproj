@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\images.aspx" />
     <Content Include="admin\members.aspx" />
     <Content Include="admin\orders.aspx" />
     <Content Include="admin\products.aspx" />
@@ -100,6 +101,13 @@
     </Compile>
     <Compile Include="admin\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\images.aspx.cs">
+      <DependentUpon>images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\images.aspx.designer.cs">
+      <DependentUpon>images.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\members.aspx.cs">
       <DependentUpon>members.aspx</DependentUpon>
