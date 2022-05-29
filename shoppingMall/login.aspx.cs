@@ -23,7 +23,7 @@ namespace shoppingMall
             // C:\\Users\\elmohandes\\source\\repos\\shoppingMall\\shoppingMall\\App_Data\\
 
             String sqlString = string.Format(
-                "SELECT member.id, member.firstName, member.lastName, member.userName, member.profilePicture, member.email, member.sex, member.dateOfBirth, member.createdAt, memberRole.name AS userRole FROM member LEFT JOIN memberRole ON memberRole.memberId=member.id WHERE member.email='{0}' AND member.password='{1}'",
+                "SELECT member.id, member.firstName, member.lastName, member.userName, member.profilePicture, member.email, member.sex, member.dateOfBirth, member.createdAt, member.role AS role FROM member WHERE member.email='{0}' AND member.password='{1}'",
                 txEmail.Text,
                 txPassword.Text
             );
@@ -47,7 +47,7 @@ namespace shoppingMall
                     cookie.Values.Add("sex", reader.GetValue(6).ToString());
                     cookie.Values.Add("dateOfBirth", reader.GetValue(7).ToString());
                     cookie.Values.Add("createdAt", reader.GetValue(8).ToString());
-                    cookie.Values.Add("userRole", reader.GetValue(9).ToString());
+                    cookie.Values.Add("role", reader.GetValue(9).ToString());
                     cookie.Expires = DateTime.Now.AddDays(3);
                     Response.Cookies.Add(cookie);
 

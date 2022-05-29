@@ -18,7 +18,7 @@ namespace shoppingMall
                 return;
             }
 
-            if (userInfo.Values["userRole"] != "admin") {
+            if (userInfo.Values["role"] != "admin") {
                 Response.Redirect("/users/home");
                 return;
             }

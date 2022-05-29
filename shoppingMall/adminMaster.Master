@@ -29,7 +29,7 @@ CodeBehind="adminMaster.master.cs" Inherits="shoppingMall.adminMaster" %>
 							ID="hlProductsList"
 							runat="server"
 							CssClass="animation-1"
-							NavigateUrl="~/admin/productsList"
+							NavigateUrl="~/admin/productsList.aspx"
 						>
 							Products List
 						</asp:HyperLink>
@@ -39,7 +39,7 @@ CodeBehind="adminMaster.master.cs" Inherits="shoppingMall.adminMaster" %>
 							ID="hlMembersList"
 							runat="server"
 							CssClass="animation-1"
-							NavigateUrl="~/admin/membersList"
+							NavigateUrl="~/admin/membersList.aspx"
 						>
 							Members List
 						</asp:HyperLink>
@@ -49,7 +49,7 @@ CodeBehind="adminMaster.master.cs" Inherits="shoppingMall.adminMaster" %>
 							ID="hlOrdersList"
 							runat="server"
 							CssClass="animation-1"
-							NavigateUrl="~/admin/ordersList"
+							NavigateUrl="~/admin/ordersList.aspx"
 						>
 							Orders List
 						</asp:HyperLink>
