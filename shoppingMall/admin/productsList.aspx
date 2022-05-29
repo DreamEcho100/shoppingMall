@@ -10,43 +10,137 @@
           border-collapse: collapse;
           width: 100%;
         }
-th, td {
-  padding: 15px;
-  text-align: left;
-}
-th, td {
-  border-bottom: 1px solid #ddd;
-}
-td, th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-tr:nth-child(even){background-color: #f2f2f2;}
-tr:hover {background-color: #ddd;}
-th {
-  background-color: #04AA6D;
-  color: white;
-}
-td input[type="text"] {
-    padding: 0.5em;
-}
-/*td a:contains("Cancel"){
-    background-color: palevioletred;
-    color: darkred;
-    padding: 0.25em;
-}*/
+				th, td {
+					padding: 15px;
+					text-align: left;
+				}
+				th, td {
+					border-bottom: 1px solid #ddd;
+				}
+				td, th {
+					border: 1px solid #ddd;
+					padding: 8px;
+				}
+				tr:nth-child(even){background-color: #f2f2f2;}
+				tr:hover {background-color: #ddd;}
+				th {
+				background-color: #333;
+						color: #eee;
+				}
+				td input[type="text"] {
+						padding: 0.5em;
+				}
+				/*td a:contains("Cancel"){
+						background-color: palevioletred;
+						color: darkred;
+						padding: 0.25em;
+				}*/
+				.CNP {
+						border: 0.1rem solid black;
+						padding: 0.5em;
+						margin: 0.5em 0;
+				}
+				.CNPFormConatiner {
+						display: flex;
+						margin-bottom: 0.5em;
+						gap: 0.5em;
+						width: 100%;
+						flex-wrap: wrap;
+				}
+				.CNPFormConatiner .form-input-controller {
+						transition: all 0.3s ease-in-out;
+				}
+				.CNPFormConatiner:hover .form-input-controller:not(:hover,:focus,.noNothoverAnimation) {
+						filter: opacity(0.5);
+				}
+				.CNPFormConatiner .form-input-controller input {
+						border-bottom: 0.1rem solid black;
+						padding: 0.25em 0.5em;
+				}
+				.CNPFormConatiner .form-submit-controller input {
+					padding: 0.5em;
+						background-color: #333;
+						color: #eee;
+				}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <form id="form1" runat="server">
+        
+    <form id="form2" runat="server">
+    <div class="CNP">
+			<header>
+				<h2>Add a New Product?</h2>
+			</header>
+        <div class="CNPFormConatiner">        
+            <div class='form-input-controller'>
+                <label for='tBName'>Name</label>
+                <asp:TextBox
+                    ID="tBCNPName"
+                    runat="server"
+                ></asp:TextBox>
+            </div>
+            <div class='form-input-controller'>
+                <label for='tBPrice'>Price</label>
+                <asp:TextBox
+                    ID="tBCNPPrice"
+                    runat="server"
+                    TextMode="Number"
+                    step="any"
+                ></asp:TextBox>
+            </div>
+            <div class='form-input-controller'>
+                <label for='tBImage'>Image</label>
+                <asp:TextBox
+                    ID="tBCNPImage"
+                    runat="server"
+                ></asp:TextBox>
+            </div>
+            <div class='form-input-controller'>
+                <label for='tBDescription'>Description</label>
+                <asp:TextBox
+                    ID="tBCNPDescription"
+                    runat="server"
+                ></asp:TextBox>
+            </div>
+            <div class='form-input-controller'>
+                <label for='tBCountInStock'>CountInStock</label>
+                <asp:TextBox
+                    ID="tBCNPCountInStock"
+                    runat="server"
+                    TextMode="Number"
+                ></asp:TextBox>
+            </div>
+            <div class='form-input-controller'>
+                <label for='tBBrand'>Brand</label>
+                <asp:TextBox
+                    ID="tBCNPBrand"
+                    runat="server"
+                ></asp:TextBox>
+            </div>
+            <div class='form-input-controller'>
+                <label for='tBCategory'>Category</label>
+                <asp:TextBox
+                    ID="tBCNPCategory"
+                    runat="server"
+                ></asp:TextBox>
+            </div>
 
+            <div class="form-submit-controller noNothoverAnimation">
+                <asp:Button ID="CreateNewProductButton" runat="server" Text="Create" OnClick="CreateNewProductButton_Click" />
+            </div>
+        </div>
+        <div>
+            <asp:Label ID="LCNPSuccess" runat="server" Text=""></asp:Label>
+            <asp:Label ID="LCNPError" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
     <div>
-        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="category" DataValueField="category"></asp:DropDownList>
+        <asp:DropDownList ID="DDLProductsCategories" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="category" DataValueField="category"></asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [category] FROM [product]"></asp:SqlDataSource>
     </div>
         <div class="tableContainer">
-            <asp:GridView runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1">
+            <asp:GridView ID="gVProductsList" AutoGenerateDeleteButton="True" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                     <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
@@ -57,10 +151,11 @@ td input[type="text"] {
                     <asp:BoundField DataField="brand" HeaderText="brand" SortExpression="brand" />
                     <asp:BoundField DataField="category" HeaderText="category" SortExpression="category" />
                     <asp:BoundField DataField="createdAt" HeaderText="createdAt" SortExpression="createdAt" />
-                    <asp:BoundField DataField="updateAt" HeaderText="updateAt" SortExpression="updateAt" />
+                    <asp:CommandField ShowEditButton="True" />
+                    <asp:CommandField ShowDeleteButton="True" />
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [product] WHERE [id] = @id" InsertCommand="INSERT INTO [product] ([name], [price], [image], [description], [countInStock], [brand], [category], [createdAt], [updateAt]) VALUES (@name, @price, @image, @description, @countInStock, @brand, @category, @createdAt, @updateAt)" SelectCommand="SELECT [id], [name], [price], [image], [description], [countInStock], [brand], [category], [createdAt], [updateAt] FROM [product] WHERE ([category] = @category)" UpdateCommand="UPDATE [product] SET [name] = @name, [price] = @price, [image] = @image, [description] = @description, [countInStock] = @countInStock, [brand] = @brand, [category] = @category, [createdAt] = @createdAt, [updateAt] = @updateAt WHERE [id] = @id">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [product] WHERE [id] = @id" InsertCommand="INSERT INTO [product] ([name], [price], [image], [description], [countInStock], [brand], [category], [createdAt]) VALUES (@name, @price, @image, @description, @countInStock, @brand, @category, @createdAt)" SelectCommand="SELECT [id], [name], [price], [image], [description], [countInStock], [brand], [category], [createdAt] FROM [product] WHERE ([category] = @category)" UpdateCommand="UPDATE [product] SET [name] = @name, [price] = @price, [image] = @image, [description] = @description, [countInStock] = @countInStock, [brand] = @brand, [category] = @category, [createdAt] = @createdAt WHERE [id] = @id">
         <DeleteParameters>
             <asp:Parameter Name="id" Type="Int32" />
         </DeleteParameters>
@@ -73,10 +168,9 @@ td input[type="text"] {
             <asp:Parameter Name="brand" Type="String" />
             <asp:Parameter Name="category" Type="String" />
             <asp:Parameter Name="createdAt" Type="DateTime" />
-            <asp:Parameter Name="updateAt" Type="DateTime" />
         </InsertParameters>
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="DropDownList1" Name="category" PropertyName="SelectedValue" Type="String" />
+                    <asp:ControlParameter ControlID="DDLProductsCategories" Name="category" PropertyName="SelectedValue" Type="String" />
                 </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="name" Type="String" />
@@ -87,7 +181,6 @@ td input[type="text"] {
             <asp:Parameter Name="brand" Type="String" />
 <asp:Parameter Name="category" Type="String"></asp:Parameter>
             <asp:Parameter Name="createdAt" Type="DateTime" />
-            <asp:Parameter Name="updateAt" Type="DateTime" />
             <asp:Parameter Name="id" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
