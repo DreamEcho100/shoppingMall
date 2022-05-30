@@ -71,6 +71,7 @@
     <Content Include="admin\members.aspx" />
     <Content Include="admin\orders.aspx" />
     <Content Include="admin\products.aspx" />
+    <Content Include="cart.aspx" />
     <Content Include="products.aspx" />
     <Content Include="styles\adminMaster.css" />
     <Content Include="admin\home.aspx" />
@@ -130,6 +131,12 @@
     </Compile>
     <Compile Include="admin\products.aspx.designer.cs">
       <DependentUpon>products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="products.aspx.cs">
       <DependentUpon>products.aspx</DependentUpon>

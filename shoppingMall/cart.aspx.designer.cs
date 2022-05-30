@@ -11,7 +11,7 @@ namespace shoppingMall
 {
 
 
-    public partial class products
+    public partial class cart
     {
 
         /// <summary>
@@ -24,21 +24,12 @@ namespace shoppingMall
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// DLProduct control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DLProduct;
-
-        /// <summary>
-        /// DLProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DLProducts;
+        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }
