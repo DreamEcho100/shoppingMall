@@ -26,6 +26,16 @@ CodeBehind="adminMaster.master.cs" Inherits="shoppingMall.adminMaster" %>
 				<ul>
 					<li>
 						<asp:HyperLink
+							ID="HLHome"
+							runat="server"
+							CssClass="animation-1"
+							NavigateUrl="~/admin/home.aspx"
+						>
+							Home
+						</asp:HyperLink>
+					</li>
+					<li>
+						<asp:HyperLink
 							ID="hlProducts"
 							runat="server"
 							CssClass="animation-1"

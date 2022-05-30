@@ -283,12 +283,7 @@ Inherits="shoppingMall.Register" %>
 					</fieldset>
 
 					<div class="form-controller animation-1">
-						<%--<asp:Button
-							ID="submitButton"
-							runat="server"
-							Text="Submit"
-							OnClick="submitButton_Click"
-						/>--%><asp:Button
+						<asp:Button
 							ID="submitButton"
 							runat="server"
 							Text="Submit"
@@ -316,43 +311,5 @@ Inherits="shoppingMall.Register" %>
 				</footer>
 			</section>
 		</main>
-
-		<%--
-		<form id="registerForm" runat="server">
-			<div>
-				<asp:Label ID="Label1" runat="server" Text="First Name: "></asp:Label>
-				<asp:TextBox ID="fisrtName" runat="server"></asp:TextBox>
-			</div>
-			<div>
-				<asp:Label ID="Label2" runat="server" Text="Last Name: "></asp:Label>
-				<asp:TextBox ID="lastName" runat="server"></asp:TextBox>
-			</div>
-			<div>
-				<asp:Label ID="Label3" runat="server" Text="Email: "></asp:Label>
-				<asp:TextBox ID="email" runat="server"></asp:TextBox>
-			</div>
-			<div>
-				<asp:Label ID="Label4" runat="server" Text="Password: "></asp:Label>
-				<asp:TextBox ID="password" runat="server"></asp:TextBox>
-			</div>
-			<div>
-				<asp:Label
-					ID="Label5"
-					runat="server"
-					Text="Confirm Password: "
-				></asp:Label>
-				<asp:TextBox ID="passwordConfirmation" runat="server"></asp:TextBox>
-			</div>
-			<div>
-				Have an account?
-				<asp:HyperLink
-					ID="register"
-					runat="server"
-					NavigateUrl="~/login.aspx.cs"
-					>Register</asp:HyperLink
-				>
-			</div>
-		</form>
-		--%>
 	</body>
 </html>

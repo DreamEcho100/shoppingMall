@@ -25,7 +25,7 @@ namespace shoppingMall
 
             if (FUProfilePicture.HasFile) {
                 FUProfilePictureSrc = txUserName.Text + ".jpg";
-                FUProfilePicture.SaveAs(Server.MapPath("usersProfilePicture") + "\\" + FUProfilePictureSrc);
+                FUProfilePicture.SaveAs(Server.MapPath("images/users") + "\\" + FUProfilePictureSrc);
             }
 
             String sqlString = string.Format(

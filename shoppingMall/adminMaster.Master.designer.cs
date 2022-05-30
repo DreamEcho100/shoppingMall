@@ -42,6 +42,15 @@ namespace shoppingMall
         protected global::System.Web.UI.WebControls.Label WelcomeUserName;
 
         /// <summary>
+        /// HLHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HLHome;
+
+        /// <summary>
         /// hlProducts control.
         /// </summary>
         /// <remarks>
@@ -60,13 +69,22 @@ namespace shoppingMall
         protected global::System.Web.UI.WebControls.HyperLink hlMembers;
 
         /// <summary>
-        /// hlOrdersList control.
+        /// hlOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlOrdersList;
+        protected global::System.Web.UI.WebControls.HyperLink hlOrders;
+
+        /// <summary>
+        /// hlImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlImages;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

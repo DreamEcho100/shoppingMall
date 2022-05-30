@@ -11,14 +11,14 @@
                 </header>
             <div class="form-conatiner">        
                 <div class='form-input-controller'>
-                    <label for='tBName'>Name</label>
+                    <label for='tBName'>Name:</label>
                     <asp:TextBox
                         ID="tBCNPName"
                         runat="server"
                     ></asp:TextBox>
                 </div>
                 <div class='form-input-controller'>
-                    <label for='tBPrice'>Price</label>
+                    <label for='tBPrice'>Price:</label>
                     <asp:TextBox
                         ID="tBCNPPrice"
                         runat="server"
@@ -27,21 +27,21 @@
                     ></asp:TextBox>
                 </div>
                 <div class='form-input-controller'>
-                    <label for='tBImage'>Image</label>
+                    <label for='tBImage'>Image:</label>
                     <asp:TextBox
                         ID="tBCNPImage"
                         runat="server"
                     ></asp:TextBox>
                 </div>
                 <div class='form-input-controller'>
-                    <label for='tBDescription'>Description</label>
+                    <label for='tBDescription'>Description:</label>
                     <asp:TextBox
                         ID="tBCNPDescription"
                         runat="server"
                     ></asp:TextBox>
                 </div>
                 <div class='form-input-controller'>
-                    <label for='tBCountInStock'>CountInStock</label>
+                    <label for='tBCountInStock'>Count In Stock:</label>
                     <asp:TextBox
                         ID="tBCNPCountInStock"
                         runat="server"
@@ -49,14 +49,14 @@
                     ></asp:TextBox>
                 </div>
                 <div class='form-input-controller'>
-                    <label for='tBBrand'>Brand</label>
+                    <label for='tBBrand'>Brand:</label>
                     <asp:TextBox
                         ID="tBCNPBrand"
                         runat="server"
                     ></asp:TextBox>
                 </div>
                 <div class='form-input-controller'>
-                    <label for='tBCategory'>Category</label>
+                    <label for='tBCategory'>Category:</label>
                     <asp:TextBox
                         ID="tBCNPCategory"
                         runat="server"
