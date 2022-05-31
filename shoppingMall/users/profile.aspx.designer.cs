@@ -7,110 +7,92 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace shoppingMall
+namespace shoppingMall.users
 {
 
 
-    public partial class adminMaster
+    public partial class profile
     {
 
         /// <summary>
-        /// head control.
+        /// loginForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlForm loginForm;
 
         /// <summary>
-        /// UserProfilePicture control.
+        /// txEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image UserProfilePicture;
+        protected global::System.Web.UI.WebControls.TextBox txEmail;
 
         /// <summary>
-        /// WelcomeUserName control.
+        /// lEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label WelcomeUserName;
+        protected global::System.Web.UI.WebControls.Label lEmail;
 
         /// <summary>
-        /// HLAdminHome control.
+        /// ReqEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HLAdminHome;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqEmail;
 
         /// <summary>
-        /// hlProducts control.
+        /// RegexEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlProducts;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegexEmail;
 
         /// <summary>
-        /// hlMembers control.
+        /// txPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlMembers;
+        protected global::System.Web.UI.WebControls.TextBox txPassword;
 
         /// <summary>
-        /// hlOrders control.
+        /// lPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlOrders;
+        protected global::System.Web.UI.WebControls.Label lPassword;
 
         /// <summary>
-        /// hlImages control.
+        /// ReqPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlImages;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqPassword;
 
         /// <summary>
-        /// HLProfile control.
+        /// submitButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HLProfile;
-
-        /// <summary>
-        /// HyperLink1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
-
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button submitButton;
     }
 }

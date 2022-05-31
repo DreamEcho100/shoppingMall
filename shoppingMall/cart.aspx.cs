@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Script.Serialization;
@@ -43,15 +44,22 @@ namespace shoppingMall
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie cartItemsCookie = new HttpCookie("cartItems");
+            //HttpCookie cartItemsCookie = HttpContext.Current.Request.Cookies("cartItems");
+            //Debug.WriteLine(cartItemsCookie);
             List<CartItem> cartItems;
-            if (cartItemsCookie.Value != null) cartItems = (List<CartItem>)new JavaScriptSerializer().DeserializeObject(cartItemsCookie.Value);
+                //HttpCookie toAddToCartCookie = HttpContext.Current.Request.Cookies["toAddToCart"];
+            if (cartItemsCookie.Value != null)
+            {
+                Label1.Text = cartItemsCookie.Value.ToString(); //  cartItems.Count.ToString();
+                cartItems = (List<CartItem>)new JavaScriptSerializer().DeserializeObject(cartItemsCookie.Value);
+            }
             else cartItems = new List<CartItem>();
 
 
-            HttpCookie toAddToCartCookie = HttpContext.Current.Request.Cookies["toAddToCart"];
-            if (toAddToCartCookie.Value.ToString() == "true")
+            HttpCookie toAddToCartCookie = Request.Cookies["toAddToCart"];
+            if (toAddToCartCookie != null && toAddToCartCookie.Value.ToString() == "true")
             {
-                HttpCookie productInfoCookie = HttpContext.Current.Request.Cookies["productInfo"];
+                HttpCookie productInfoCookie = Request.Cookies["productInfo"];
                 cartItems.Add(new CartItem(
                     productInfoCookie.Values.Get("id").ToString(),
                     productInfoCookie.Values.Get("image").ToString(),
@@ -62,25 +70,26 @@ namespace shoppingMall
                     productInfoCookie.Values.Get("price").ToString()
                 ));
 
+                HttpCookie cartItemsCookieCurr = new HttpCookie("cartItems");
                 var serializer = new JavaScriptSerializer();
                 string serializedCartItems = serializer.Serialize(cartItems);
                 //var deserializedResult = serializer.Deserialize<List<Person>>(serializedResult);
                 //cartItemsCookie.Value = new JavaScriptSerializer().Serialize(cartItems);
                 if (serializedCartItems != null)
                 {
-                    if (toAddToCartCookie.Value.ToString() == "true")
-                    {
-                        Label1.Text = cartItems[0].id;
-                    }
                     cartItemsCookie.Value = serializedCartItems;
                     cartItemsCookie.Expires = DateTime.Now.AddDays(15);
                     Response.Cookies.Add(cartItemsCookie);
+
+                    //cartItemsCookieCurr.Value = serializedCartItems;
+                    //cartItemsCookieCurr.Expires = DateTime.Now.AddDays(15);
+                    //Response.Cookies.Add(cartItemsCookieCurr);
                 }
 
-                //productInfoCookie.Expires = DateTime.Now.AddDays(-1);
-                //Response.Cookies.Add(productInfoCookie);
-                //toAddToCartCookie.Expires = DateTime.Now.AddDays(-1);
-                //Response.Cookies.Add(toAddToCartCookie);
+                productInfoCookie.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(productInfoCookie);
+                toAddToCartCookie.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(toAddToCartCookie);
             }
 
         }

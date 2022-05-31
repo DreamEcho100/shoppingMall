@@ -23,7 +23,7 @@ namespace shoppingMall
             // C:\\Users\\elmohandes\\source\\repos\\shoppingMall\\shoppingMall\\App_Data\\
 
             String sqlString = string.Format(
-                "SELECT member.id, member.firstName, member.lastName, member.userName, member.profilePicture, member.email, member.sex, member.dateOfBirth, member.createdAt, member.role AS role FROM member WHERE member.email='{0}' AND member.password='{1}'",
+                "SELECT member.id, member.firstName, member.lastName, member.userName, member.profilePicture, member.email, member.sex, member.dateOfBirth, member.createdAt, member.role FROM member WHERE member.email='{0}' AND member.password='{1}'",
                 txEmail.Text,
                 txPassword.Text
             );
@@ -37,26 +37,26 @@ namespace shoppingMall
                 reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    HttpCookie cookie = new HttpCookie("userInfo");
-                    cookie.Values.Add("id", reader.GetValue(0).ToString());
-                    cookie.Values.Add("firstName", reader.GetValue(1).ToString());
-                    cookie.Values.Add("lastName", reader.GetValue(2).ToString());
-                    cookie.Values.Add("userName", reader.GetValue(3).ToString());
-                    cookie.Values.Add("profilePicture", reader.GetValue(4).ToString());
-                    cookie.Values.Add("email", reader.GetValue(5).ToString());
-                    cookie.Values.Add("sex", reader.GetValue(6).ToString());
-                    cookie.Values.Add("dateOfBirth", reader.GetValue(7).ToString());
-                    cookie.Values.Add("createdAt", reader.GetValue(8).ToString());
-                    cookie.Values.Add("role", reader.GetValue(9).ToString());
-                    cookie.Expires = DateTime.Now.AddDays(3);
-                    Response.Cookies.Add(cookie);
+                    HttpCookie userInfoCookie = new HttpCookie("userInfo");
+                    userInfoCookie.Values.Add("id", reader.GetValue(0).ToString());
+                    userInfoCookie.Values.Add("firstName", reader.GetValue(1).ToString());
+                    userInfoCookie.Values.Add("lastName", reader.GetValue(2).ToString());
+                    userInfoCookie.Values.Add("userName", reader.GetValue(3).ToString());
+                    userInfoCookie.Values.Add("profilePicture", reader.GetValue(4).ToString());
+                    userInfoCookie.Values.Add("email", reader.GetValue(5).ToString());
+                    userInfoCookie.Values.Add("sex", reader.GetValue(6).ToString());
+                    userInfoCookie.Values.Add("dateOfBirth", reader.GetValue(7).ToString());
+                    userInfoCookie.Values.Add("createdAt", reader.GetValue(8).ToString());
+                    userInfoCookie.Values.Add("role", reader.GetValue(9).ToString());
+                    userInfoCookie.Expires = DateTime.Now.AddDays(3);
+                    Response.Cookies.Add(userInfoCookie);
 
                     String userRole = reader.GetValue(9).ToString();
                     LLoginMessage.Text = "Logged in Successfully! Redirecting to userHome page.";
                     if (userRole == "admin")
                         Response.Redirect("~/admin/home.aspx");
                     else
-                        Response.Redirect("~/users/index.aspx");
+                        Response.Redirect("~/users/home.aspx");
                 }
                 else LLoginErrorMessage.Text = "Incorrect Email and/or password, Please try again!";
                 conn.Close();
@@ -68,37 +68,3 @@ namespace shoppingMall
         }
     }
 }
-
-
-            /*
-// https://stackoverflow.com/questions/12891968/invalid-column-name-error-in-sqldatareader
-using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SQL Connection String"].ConnectionString)) {
-    var sql = "Select * from TB_User where UserID=@UserID";
-    using (var cmd = new SqlCommand(sql, con)) {
-        cmd.Parameters.AddWithValue("@UserID", Label1.Text);
-        con.Open();
-        using(var reader = cmd.ExecuteReader())
-        {
-            while(reader.Read())
-            {
-                // ...
-            }
-        }
-    }
-}
-             */
-
-            /*
-// https://stackoverflow.com/questions/53175674/system-data-sqlclient-sqlexception-invalid-column-name
-string connectionString = @"Data Source=DESKTOP-IE39262;Initial Catalog=Hospital;Integrated Security=True";
-string sqlQuery = "INSERT INTO Dept (Dept_No, DNombre, Loc) VALUES (@Dept_No,@DNombre,@Loc)";
-using (SqlConnection connection = new SqlConnection(connectionString))
-using (SqlCommand command = new SqlCommand(sqlQuery, connection))
-{
-    command.Parameters.Add("@Dept_No", SqlDbType.VarChar,100).Value = dept.Dept_No;
-    command.Parameters.Add("@DNombre", SqlDbType.VarChar, 100).Value = dept.DNombre;
-    command.Parameters.Add("@Loc", SqlDbType.VarChar, 100).Value = dept.Loc;
-    connection.Open();
-    command.ExecuteNonQuery();
-}             
-             */

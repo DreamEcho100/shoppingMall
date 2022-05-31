@@ -90,7 +90,7 @@
 	--color-2-5: hsl(300, 100%, 5%); /* #1a001a	rgb(26, 0, 26) */
 	--color-2-0: hsl(300, 100%, 0%); /* #000000	rgb(0, 0, 0) */
 
-	--current-font-size: var(--size-8);
+	--current-font-size: var(--size-12);
 	--main-bg-color-0: var(--color-1-100);
 	--main-bg-color-0-95: var(--color-1-100-95);
 	--main-bg-color-1: var(--color-1-100);

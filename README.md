@@ -3,6 +3,26 @@
 ## DataBase
 
 ```sql
+CREATE TABLE [dbo].[member] (
+    [id]             INT           IDENTITY (1, 1) NOT NULL,
+    [firstName]      NVARCHAR (32) NOT NULL,
+    [lastName]       NVARCHAR (32) NOT NULL,
+    [userName]       NVARCHAR (64) NOT NULL,
+    [profilePicture] TEXT          NOT NULL,
+    [email]          NVARCHAR (64) NOT NULL,
+    [password]       NVARCHAR (64) NOT NULL,
+    [sex]            NVARCHAR (1)  NOT NULL,
+    [dateOfBirth]    DATE          NOT NULL,
+    [role]           VARCHAR (64)  NULL,
+    [createdAt]      DATETIME      DEFAULT (getdate()) NOT NULL,
+    CONSTRAINT [PK_member_id] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [AK_member_userName_uique] UNIQUE NONCLUSTERED ([userName] ASC),
+    CONSTRAINT [AK_member_email_uique] UNIQUE NONCLUSTERED ([email] ASC),
+    CONSTRAINT [CK_member_sex_checker] CHECK ([sex]='m' OR [sex]='f')
+);
+```
+
+```sql
 INSERT INTO [product]
   ([name], [image], [description], [category], [brand], [countInStock], [price]) VALUES
   (

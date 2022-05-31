@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="user.master.cs" Inherits="shoppingMall.user" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initPageial-scale=1.0" />
+	<link href="~/styles/globals.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="~/styles/adminMaster.css" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+	<header id="main-header">
+		<div class="userWelcomeMsg">
+			<div class="img-holder">
+				<asp:Image ID="UserProfilePicture" runat="server" />
+			</div>
+			<div class="text-holder">
+				<h1>Welcome <asp:Label ID="WelcomeUserName" runat="server" ></asp:Label></h1>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<asp:HyperLink
+						ID="HyperLink2"
+						runat="server"
+						CssClass="animation-1"
+						NavigateUrl="~/users/home.aspx"
+					>
+						User Home
+					</asp:HyperLink>
+				</li>
+				<li>
+					<asp:HyperLink
+						ID="HLProfile"
+						runat="server"
+						CssClass="animation-1"
+						NavigateUrl="~/users/profile.aspx"
+					>
+						Profile
+					</asp:HyperLink>
+				</li>
+				<li>
+					<asp:HyperLink
+						Visible="false"
+						ID="HLAdminHome"
+						runat="server"
+						CssClass="animation-1"
+						NavigateUrl="~/admin/home.aspx"
+					>
+						Admin
+					</asp:HyperLink>
+				</li>
+				<li>
+					<asp:HyperLink
+						ID="HyperLink1"
+						runat="server"
+						CssClass="animation-1"
+						NavigateUrl="~/logout.aspx"
+					>
+						Logout
+					</asp:HyperLink>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main id="main-content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </main>
+	<footer id="main-footer">
+		&copy;2022
+	</footer>
+	<%--<form id="form1" runat="server">
+	</form>--%>
+</body>
+</html>

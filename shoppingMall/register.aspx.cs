@@ -47,6 +47,7 @@ namespace shoppingMall
                 conn.Close();
 
                 LRegisterMessage.Text = "Registered Successfully!";
+                Response.Redirect("~/login.aspx");
             } catch (Exception err) {
                 //if (err.Number == 2677) { }
 

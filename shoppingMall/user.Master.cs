@@ -7,20 +7,21 @@ using System.Web.UI.WebControls;
 
 namespace shoppingMall
 {
-    public partial class adminMaster : System.Web.UI.MasterPage
+    public partial class user : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie userInfo = Request.Cookies["userInfo"];
 
-            if (userInfo == null) {
+            if (userInfo == null)
+            {
                 Response.Redirect("/login.aspx");
                 return;
             }
 
-            if (userInfo.Values["role"] != "admin") {
-                Response.Redirect("/users/home");
-                return;
+            if (userInfo.Values["role"] == "admin")
+            {
+                HLAdminHome.Visible = true;
             }
 
             if (userInfo.Values["profilePicture"].StartsWith("https")) UserProfilePicture.ImageUrl = userInfo.Values["profilePicture"];

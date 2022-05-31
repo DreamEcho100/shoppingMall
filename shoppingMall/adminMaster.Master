@@ -26,12 +26,12 @@ CodeBehind="adminMaster.master.cs" Inherits="shoppingMall.adminMaster" %>
 				<ul>
 					<li>
 						<asp:HyperLink
-							ID="HLHome"
+							ID="HLAdminHome"
 							runat="server"
 							CssClass="animation-1"
 							NavigateUrl="~/admin/home.aspx"
 						>
-							Home
+							Admin Home
 						</asp:HyperLink>
 					</li>
 					<li>
@@ -72,6 +72,26 @@ CodeBehind="adminMaster.master.cs" Inherits="shoppingMall.adminMaster" %>
 							NavigateUrl="~/admin/images.aspx"
 						>
 							Images
+						</asp:HyperLink>
+					</li>
+					<li>
+						<asp:HyperLink
+							ID="HLProfile"
+							runat="server"
+							CssClass="animation-1"
+							NavigateUrl="~/users/profile.aspx"
+						>
+							Profile
+						</asp:HyperLink>
+					</li>
+					<li>
+						<asp:HyperLink
+							ID="HyperLink1"
+							runat="server"
+							CssClass="animation-1"
+							NavigateUrl="~/logout.aspx"
+						>
+							Logout
 						</asp:HyperLink>
 					</li>
 				</ul>

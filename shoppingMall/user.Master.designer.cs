@@ -11,7 +11,7 @@ namespace shoppingMall
 {
 
 
-    public partial class adminMaster
+    public partial class user
     {
 
         /// <summary>
@@ -42,49 +42,13 @@ namespace shoppingMall
         protected global::System.Web.UI.WebControls.Label WelcomeUserName;
 
         /// <summary>
-        /// HLAdminHome control.
+        /// HyperLink2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HLAdminHome;
-
-        /// <summary>
-        /// hlProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlProducts;
-
-        /// <summary>
-        /// hlMembers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlMembers;
-
-        /// <summary>
-        /// hlOrders control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlOrders;
-
-        /// <summary>
-        /// hlImages control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlImages;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
 
         /// <summary>
         /// HLProfile control.
@@ -94,6 +58,15 @@ namespace shoppingMall
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HLProfile;
+
+        /// <summary>
+        /// HLAdminHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HLAdminHome;
 
         /// <summary>
         /// HyperLink1 control.

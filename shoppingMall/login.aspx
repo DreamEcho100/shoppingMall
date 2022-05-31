@@ -2,68 +2,6 @@
 Inherits="shoppingMall.WebForm1" %>
 
 <!DOCTYPE html>
-<script>
-	document.addEventListener('DOMContentLoaded', (event) => {
-		const loginForm = document.getElementById('loginForm');
-		const loginFormTextBoxes = loginForm.querySelectorAll(
-			'.checkForEmptyValue'
-		);
-		const loginFormLabels = loginForm.querySelectorAll('.form-label');
-
-		const isClassListContainingIsEmpty = (elem) => {
-			if (elem.value.trim().length === 0) {
-				// event.target.class
-				elem.classList.add('isEmpty');
-			} else if (elem.classList.contains('isEmpty')) {
-				elem.classList.remove('isEmpty');
-			}
-		};
-
-		const initPage = () => {
-			loginFormTextBoxes[0]?.focus();
-
-			loginFormTextBoxes.forEach((tx) => {
-				isClassListContainingIsEmpty(tx);
-			});
-		};
-
-		initPage();
-
-		loginFormTextBoxes.forEach((tx) => {
-			tx.addEventListener('input', (event) => {
-				if (event.target.value.length === 0) {
-					// event.target.class
-					tx.classList.add('isEmpty');
-				} else if (tx.classList.contains('isEmpty')) {
-					tx.classList.remove('isEmpty');
-				}
-			});
-		});
-
-		loginFormLabels.forEach((label) => {
-			label.addEventListener('click', (event) => {
-				const elem = document.getElementById(label.dataset.for_id);
-				elem.focus();
-			});
-		});
-
-		loginForm.addEventListener('submit', (event) => {
-			document
-				.querySelectorAll('.form-controller.error span')
-				.forEach((elem) => {
-					if (getComputedStyle(elem).visibility === 'visible') {
-						if (elem.parentElement.classList.contains('pseudoHide')) {
-							elem.parentElement.classList.remove('pseudoHide');
-						}
-					} else {
-						if (!elem.parentElement.classList.contains('pseudoHide')) {
-							elem.parentElement.classList.add('pseudoHide');
-						}
-					}
-				});
-		});
-	});
-</script>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 	<head runat="server">
@@ -74,6 +12,7 @@ Inherits="shoppingMall.WebForm1" %>
 		<link href="~/styles/globals.css" type="text/css" rel="stylesheet" />
 		<link href="~/styles/loginStyles.css" type="text/css" rel="stylesheet" />
 		<link href="~/styles/form.css" type="text/css" rel="stylesheet" />
+		<script src="js/form.js" defer></script>
 	</head>
 	<body>
 		<main>

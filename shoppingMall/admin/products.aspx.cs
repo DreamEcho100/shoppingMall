@@ -48,7 +48,7 @@ namespace shoppingMall.admin
                 command.ExecuteNonQuery();
                 conn.Close();
 
-                LCNPSuccess.Text = "Registered Successfully!";
+                LCNPSuccess.Text = "Inserted Successfully!";
                 //Response.Redirect(Request.RawUrl);
                 gVProductsList.DataBind();
                 tBCNPName.Text = "";
