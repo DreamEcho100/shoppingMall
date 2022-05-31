@@ -3,6 +3,8 @@
 ## DataBase
 
 ```sql
+-- connection name: shoppingMall
+
 CREATE TABLE [dbo].[member] (
     [id]             INT           IDENTITY (1, 1) NOT NULL,
     [firstName]      NVARCHAR (32) NOT NULL,
