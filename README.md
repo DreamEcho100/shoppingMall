@@ -20,6 +20,51 @@ CREATE TABLE [dbo].[member] (
     CONSTRAINT [AK_member_email_uique] UNIQUE NONCLUSTERED ([email] ASC),
     CONSTRAINT [CK_member_sex_checker] CHECK ([sex]='m' OR [sex]='f')
 );
+
+CREATE TABLE [dbo].[order] (
+    [id]              INT             IDENTITY (1, 1) NOT NULL,
+    [memberId]        INT             NOT NULL,
+    [shippingAddress] TEXT            NOT NULL,
+    [city]            NCHAR (10)      NOT NULL,
+    [paymentMethod]   NVARCHAR (60)   NOT NULL,
+    [itemsPrice]      DECIMAL (19, 4) NOT NULL,
+    [shippingPrice]   DECIMAL (19, 4) NOT NULL,
+    [paidAt]          DATETIME        NULL,
+    [deliveredAt]     DATETIME        NULL,
+    [createdAt]       DATETIME        DEFAULT (getdate()) NOT NULL,
+    CONSTRAINT [PK_order_id] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [FK_order_To_member] FOREIGN KEY ([memberId]) REFERENCES [dbo].[member] ([id]) ON DELETE CASCADE,
+    CONSTRAINT [CK_order_itemsPrice_min] CHECK ([itemsPrice]>=(0)),
+    CONSTRAINT [CK_order_shippingPrice_min] CHECK ([shippingPrice]>=(0))
+);
+
+CREATE TABLE [dbo].[orderProduct] (
+    [id]        INT             IDENTITY (1, 1) NOT NULL,
+    [orderId]   INT             NOT NULL,
+    [productId] INT             NOT NULL,
+    [price]     DECIMAL (19, 4) NOT NULL,
+    [quantity]  INT             NOT NULL,
+    CONSTRAINT [PK_orderProduct_id] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [FK_orderProduct_To_product] FOREIGN KEY ([productId]) REFERENCES [dbo].[product] ([id]),
+    CONSTRAINT [CK_orderProduct_price_min] CHECK ([price]>=(0)),
+    CONSTRAINT [CK_orderProduct_quantity_min] CHECK ([quantity]>=(0))
+);
+
+CREATE TABLE [dbo].[product] (
+    [id]           INT             IDENTITY (1, 1) NOT NULL,
+    [name]         TEXT            NOT NULL,
+    [price]        DECIMAL (19, 4) NOT NULL,
+    [image]        TEXT            NOT NULL,
+    [description]  NVARCHAR (MAX)  NOT NULL,
+    [countInStock] INT             NOT NULL,
+    [brand]        NVARCHAR (100)  NOT NULL,
+    [category]     NVARCHAR (100)  NOT NULL,
+    [createdAt]    DATETIME        DEFAULT (getdate()) NOT NULL,
+    CONSTRAINT [PK_product_id] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [CK_product_countInStock_min] CHECK ([countInStock]>=(0))
+);
+
+
 ```
 
 ```sql
@@ -68,3 +113,12 @@ INSERT INTO [product]
     12
   );
 ```
+
+[firstName] NVARCHAR (32) NOT NULL,
+[lastName] NVARCHAR (32) NOT NULL,
+[userName] NVARCHAR (64) NOT NULL,
+[profilePicture] TEXT NOT NULL,
+[email] NVARCHAR (64) NOT NULL,
+[password] NVARCHAR (64) NOT NULL,
+[sex] NVARCHAR (1) NOT NULL,
+[dateOfBirth] DATE NOT NULL,
