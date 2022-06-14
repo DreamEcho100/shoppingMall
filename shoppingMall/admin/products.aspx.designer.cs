@@ -114,6 +114,15 @@ namespace shoppingMall.admin
         protected global::System.Web.UI.WebControls.Label LCNPError;
 
         /// <summary>
+        /// GVProductsCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVProductsCount;
+
+        /// <summary>
         /// DDLProductsCategories control.
         /// </summary>
         /// <remarks>

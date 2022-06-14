@@ -72,11 +72,19 @@
                 <asp:Label ID="LCNPError" runat="server" Text=""></asp:Label>
             </div>
         </div>
-        <div>
+        <div class="tableContainer">
+            <header>
+                <h2>Products count by categories</h2>
+            </header>
+            <asp:GridView ID="GVProductsCount" runat="server"></asp:GridView>
+        </div>
+        <br />
+        <div class="tableContainer">
+            <header>
+                <h2>Products filtered by categories</h2>
+            </header>
             <asp:DropDownList ID="DDLProductsCategories" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="category" DataValueField="category"></asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [category] FROM [product]"></asp:SqlDataSource>
-        </div>
-        <div class="tableContainer">
             <asp:GridView ID="gVProductsList" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1">
                 <Columns>
                     <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
